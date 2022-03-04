@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Student_Management_systems.Models.GradeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentModels.StudentFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LetterMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resitdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentModels.StudentFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessmentTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LetterMark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.resitdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.resit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GradeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GradeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GradeId })
+        </td>
+    </tr>
+}
+
+</table>

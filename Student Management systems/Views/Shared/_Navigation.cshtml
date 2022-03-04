@@ -1,0 +1,63 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" src="#" />
+                        <span class="block m-t-xs font-bold">Techtorium</span>
+                    </div>
+                    <div class="logo-element">
+                        SMS
+                    </div>
+                </li>
+                @if (User.IsInRole("Administrator"))
+                {
+                    <li class="header">Main Menu</li>
+                    <li class="@Html.IsSelected("Admin", "Home")">
+                        <a href="@Url.Action("Home", "Admin")"><i class="fa fa-dashboard"></i> <span>DashBoard</span> <span class="label label-primary float-right">Main</span> </a>
+                    </li>
+                    <li class="@Html.IsSelected("User", "Index")">
+                        <a href="@Url.Action("Index", "User")"><i class="fa fa-apple"></i> <span>User Registration</span></a>
+                    </li>
+                    <li class="@Html.IsSelected("Student", "Index")">
+                        <a href="@Url.Action("Index", "Student")"><i class="fa fa-list-ol"></i> <span>Student Registration</span></a>
+                    </li>
+                    <li class="@Html.IsSelected("Trainer", "Index")">
+                        <a href="@Url.Action("Index", "Trainer")"><i class="fa fa-list-ul"></i> <span>Trainer Registration</span></a>
+                    </li>
+                    <li class="@Html.IsSelected("Class", "Index")">
+                        <a href="@Url.Action("Index", "Class")"><i class="fa fa-list-alt"></i> <span>Class Registration</span></a>
+                    </li>
+                    <li class="@Html.IsSelected("Attentence", "Index")">
+                        <a href="@Url.Action("Index", "Attentence")"><i class="fa fa-list-alt"></i> <span>Attendance Registration</span></a>
+                    </li>
+                }
+                @if (User.IsInRole("Trainer"))
+                {
+                    <li class="header">Main Menu</li>
+                    <li class="@Html.IsSelected("Trainer", "Home")">
+                        <a href="@Url.Action("Home", "Trainer")"><i class="fa fa-dashboard"></i> <span>DashBoard</span> <span class="label label-primary float-right">Main</span> </a>
+                    </li>
+                    <li class="@Html.IsSelected("Attentence", "Index")">
+                        <a href="@Url.Action("Index", "Attentence")"><i class="fa fa-list-alt"></i> <span>Attendance Sheet</span></a>
+                    </li>
+                    <li class="@Html.IsSelected("Class", "Index")">
+                        <a href="@Url.Action("Index", "Class")"><i class="fa fa-list-ol"></i> <span>Class List</span></a>
+                    </li>
+                    <li class="@Html.IsSelected("Student", "Index")">
+                        <a href="@Url.Action("Index", "Student")"><i class="fa fa-list-ol"></i> <span>Student List</span></a>
+                    </li>
+                }
+                @if (User.IsInRole("Student"))
+                {
+                    <li class="header">Main Menu</li>
+                    <li class="@Html.IsSelected("Student", "Home")">
+                        <a href="@Url.Action("Home", "Student")"><i class="fa fa-dashboard"></i> <span>DashBoard</span> <span class="label label-primary float-right">Main</span> </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+}

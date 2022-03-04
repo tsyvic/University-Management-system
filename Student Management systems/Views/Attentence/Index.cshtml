@@ -1,0 +1,108 @@
+﻿@*@using MultipleModelInOneView;*@
+@model Student_Management_systems.Models.GeneralViewModel
+@*@model IEnumerable<Student_Management_systems.Models.AttentenceModels>*@
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Attendance</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "Home")">Home</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Attendance</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h2>Attendance</h2>
+                    <p>
+                        @Html.ActionLink("Take Attendance", "Create")
+                    </p>
+                    <form asp-controller="Attentence" asp-action="Index" class="form-group form-inline">
+                        <p>
+                            <select name="C">
+                                @foreach (var item in Model.ClassModels)
+                                {
+                                    <option value="@item.ClassId">@item.Course_Name</option>
+                                }
+                            </select>
+                            <input type="submit" value="Submit" />
+                        </p>
+                    </form>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Class
+                            </th>
+                            <th>
+                                Student Full Name
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Start Time
+                            </th>
+                            <th>
+                                End Time
+                            </th>
+                            <th>
+                                Comments
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model.AttentenceModels)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StudentModels.ClassModels.Course_Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StudentModels.StudentFullName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Start_Time)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.End_Time)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Comments)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.AttentenceId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.AttentenceId })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

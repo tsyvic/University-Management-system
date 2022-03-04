@@ -1,0 +1,89 @@
+﻿@model Student_Management_systems.Models.TrainerModels
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Trainer1</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "Home")">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "Trainer")">Trainer</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h4>Trainer Details</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TrainerIdNum)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TrainerIdNum)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TrainerFullName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TrainerFullName)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateofBirth)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DateofBirth)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PhoneNumber)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PhoneNumber)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Address)
+                        </dd>
+
+                    </dl>
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.TrainerId }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

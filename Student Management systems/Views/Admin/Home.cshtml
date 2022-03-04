@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h2>Hello Admin</h2>
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <span class="label label-success float-right">Users</span>
+                    <h5>Users</h5>
+                </div>
+                <div class="ibox-content">
+                    <input type="button" class="btn btn-w-m btn-default" value="View All Users" onclick="@("window.location.href='" + @Url.Action("Index", "User") + "'");" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <span class="label label-success float-right">Student</span>
+                    <h5>Students</h5>
+                </div>
+                <div class="ibox-content">
+                    <input type="button" class="btn btn-w-m btn-default" value="View Students" onclick="@("window.location.href='" + @Url.Action("Index", "Student") + "'");" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <span class="label label-success float-right">Trainer</span>
+                    <h5>Trainers</h5>
+                </div>
+                <div class="ibox-content">
+                    <input type="button" class="btn btn-w-m btn-default" value="View Trainers" onclick="@("window.location.href='" + @Url.Action("Index", "Trainer") + "'");" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <span class="label label-success float-right">Class</span>
+                    <h5>Classes</h5>
+                </div>
+                <div class="ibox-content">
+                    <input type="button" class="btn btn-w-m btn-default" value="View Classes" onclick="@("window.location.href='" + @Url.Action("Index", "Class") + "'");" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <span class="label label-success float-right">Attendance</span>
+                    <h5>Attendance</h5>
+                </div>
+                <div class="ibox-content">
+                    <input type="button" class="btn btn-w-m btn-default" value="Take Attendance" onclick="@("window.location.href='" + @Url.Action("Index", "Attentance") + "'");" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

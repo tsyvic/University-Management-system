@@ -1,0 +1,74 @@
+﻿@model Student_Management_systems.Models.GradeModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GradeModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentModels.StudentFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentModels.StudentFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssessmentTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssessmentTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LetterMark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LetterMark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.result)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resitdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resitdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GradeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

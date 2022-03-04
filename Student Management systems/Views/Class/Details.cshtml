@@ -1,0 +1,80 @@
+﻿@model Student_Management_systems.Models.ClassModels
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Class Assignment</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "Home")">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "Home")">Classes</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <div>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.TrainerModels.TrainerFullName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TrainerModels.TrainerFullName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Descriptions)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Descriptions)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Course_Name)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Course_Name)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
+                    {
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.ClassId }) | @Html.ActionLink("Back to List", "Index")
+                        </p>
+                    }
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
+                    {
+                        <p>
+                            @Html.ActionLink("Back to List", "Index")
+                        </p>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
